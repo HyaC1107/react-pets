@@ -1,0 +1,33 @@
+@media screen and (max-width: 400px) {
+    .item{width: 90%;}
+}
+@media screen and (min-width:401px) and (max-width: 767px) {
+    .item{width:42%}
+}
+@media screen and (min-width: 768px) {
+    .item{width: 30%;}
+}
+.item{
+    display: flex;
+    border-radius: 1rem;
+    
+    padding: 0.5rem;
+    cursor: pointer;
+}
+.item:nth-child(odd){
+    background-color: rgb(211, 192, 139);
+}
+.item:nth-child(even){
+    background-color: rgb(243, 224, 173);
+}
+.item:hover{
+    transform: scale(1.02);
+}
+.item img{
+    border-radius: 1rem;
+    width: 40%;
+    height: 160px;
+}
+.inform{
+    padding-left: 0.5rem;
+}

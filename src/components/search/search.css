@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Gaegu:wght@700&display=swap');
+.search {
+    position: sticky;
+    top : 0;
+    background-color: rgb(255, 237, 158);
+    height: 60px;
+    z-index: 1000;
+    padding: 5px;
+    display: flex;
+}
+
+.search-form {
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    gap:0.5rem;
+    justify-content: center;
+    flex-grow: 1;
+}
+.search-form input {
+    padding: 5px;
+    font-size: 15px;
+    font-family: "맑은고딕";
+    border: 1px solid;
+}
+.search-form input:focus {
+    outline: 0;
+}
+.search-form select{
+    font-size: 15px;
+    padding: 5px;
+    font-family: "맑은고딕";
+}
+.submitBox{
+    display: flex;
+    
+}
+.submitBox select{
+    margin-right: 0.2rem;
+    
+}
+.search-form button {
+    width: 60px;
+    height: 32px;
+    border: 0;
+    margin-left: 0.5rem;
+}
+.logo{
+    width: 25%;
+    display: flex;
+    padding-left: 2rem;
+    gap: 1rem;
+    cursor: pointer;
+}
+.logo p{
+    font-family: 'Gaegu', cursive;
+    font-size: 1.5rem;
+    line-height: 1rem;
+}
+.logo img{
+    width: 50px;
+    height: 50px;
+}
+@media screen and (max-width:767px) {
+    .search{
+        height: fit-content;
+        flex-direction: column;
+    }
+    .logo{
+        width: 100%;
+        justify-content: center;
+        padding-left: 0;
+    }
+}
+@media screen and (max-width:525px) {
+    .search-form{
+        flex-direction: column;
+    }
+    .dateBox{
+        width:100%;
+    }
+    .search-form select{
+        width: 80%;
+    }
+}

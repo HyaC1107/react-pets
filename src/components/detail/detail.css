@@ -1,0 +1,24 @@
+.detail{
+    width: 60%;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+.detail img{
+    width: 90%;
+    max-height: 600px;
+    border-radius: 3rem;
+}
+.detail table{
+    width: 80%;
+    margin: auto;
+    border-collapse: collapse;
+}
+.detail table td{
+    border: 2px solid;
+}
+
+@media screen and (max-width:525px){
+    .detail img{
+        max-height: 400px;
+    }
+}
