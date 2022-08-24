@@ -19,7 +19,7 @@ function App() {
     setIsLoading(true);
     const key= process.env.REACT_APP_API_KEY
     console.log(key)
-    fetch(`http://apis.data.go.kr/1543061/abandonmentPublicSrvc/abandonmentPublic?serviceKey=${key}&_type=json&numOfRows=30`)
+    fetch(`https://apis.data.go.kr/1543061/abandonmentPublicSrvc/abandonmentPublic?serviceKey=${key}&_type=json&numOfRows=30`)
       .then(response => response.json())
       .then(json=>{
         console.log(json.response.body);
@@ -31,7 +31,7 @@ function App() {
       })
 
     // 시도 코드 가져오기
-    fetch(`http://apis.data.go.kr/1543061/abandonmentPublicSrvc/sido?numOfRows=17&serviceKey=${key}&_type=json`)
+    fetch(`https://apis.data.go.kr/1543061/abandonmentPublicSrvc/sido?numOfRows=17&serviceKey=${key}&_type=json`)
     .then(response => response.json())
     .then(json=>{
       setLocation(json.response.body.items.item);
