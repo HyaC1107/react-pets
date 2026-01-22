@@ -18,8 +18,9 @@ function App() {
   useEffect(()=>{
     setIsLoading(true);
     const key= process.env.REACT_APP_API_KEY
+    
     console.log(key)
-    fetch(`https://apis.data.go.kr/1543061/abandonmentPublicSrvc/abandonmentPublic?serviceKey=${key}&_type=json&numOfRows=30`)
+    fetch(`https://apis.data.go.kr/1543061/abandonmentPublicService_v2/abandonmentPublic?serviceKey=${key}&_type=json&numOfRows=30`)
       .then(response => response.json())
       .then(json=>{
         console.log(json.response.body);
@@ -31,7 +32,7 @@ function App() {
       })
 
     // 시도 코드 가져오기
-    fetch(`https://apis.data.go.kr/1543061/abandonmentPublicSrvc/sido?numOfRows=17&serviceKey=${key}&_type=json`)
+    fetch(`https://apis.data.go.kr/1543061/abandonmentPublicService_v2/sido?numOfRows=17&serviceKey=${key}&_type=json`)
     .then(response => response.json())
     .then(json=>{
       setLocation(json.response.body.items.item);
@@ -47,7 +48,7 @@ function App() {
   const handleSearch = (bgnde, endde, upr_cd, up_kind_cd) =>{
     const key= process.env.REACT_APP_API_KEY
     setIsLoading(true);
-    fetch(`http://apis.data.go.kr/1543061/abandonmentPublicSrvc/abandonmentPublic?serviceKey=${key}&_type=json&numOfRows=60&bgnde=${bgnde}&endde=${endde}&upr_cd=${upr_cd}&upkind=${up_kind_cd}`)
+    fetch(`http://apis.data.go.kr/1543061/abandonmentPublicService_v2/abandonmentPublic?serviceKey=${key}&_type=json&numOfRows=60&bgnde=${bgnde}&endde=${endde}&upr_cd=${upr_cd}&upkind=${up_kind_cd}`)
       .then(response => response.json())
       .then(json=>{
         setPets(json.response.body.items.item);
