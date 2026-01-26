@@ -19,28 +19,32 @@ function App() {
     setIsLoading(true);
     const proxy = 'https://cors-anywhere.herokuapp.com/'; 
     const key= process.env.REACT_APP_API_KEY;
-    const uri = `${proxy}https://apis.data.go.kr/1543061/abandonmentPublicService_v2/abandonmentPublic_v2?serviceKey=${key}&_type=json`;
+    const uri = `https://api.allorigins.win/get?url=${encodeURIComponent(`https://apis.data.go.kr/1543061/abandonmentPublicService_v2/abandonmentPublic_v2?serviceKey=${key}&_type=json`)}`;
+    
     // console.log(key)
     fetch(uri)
-      .then(response => response.json())
-      .then(json=>{
+      .then(response => {
+        if (response.ok) return response.json();
+        throw new Error('Network response was not ok.');
+      })
+      .then(data => {
+        // 주의! AllOrigins는 데이터를 'contents'라는 필드에 담아줘요. 
+        // 그래서 JSON으로 한 번 더 파싱해야 할 수도 있습니다.
+        const json = JSON.parse(data.contents); 
         console.log(json.response.body);
         setPets(json.response.body.items.item);
         setIsLoading(false);
       })
-      .catch(e=>{
-        console.log(e.message);
-      })
 
     // 시도 코드 가져오기
     fetch(`https://apis.data.go.kr/1543061/abandonmentPublicService_v2/sido_v2?numOfRows=17&serviceKey=${key}&_type=json`)
-    .then(response => response.json())
-    .then(json=>{
-      setLocation(json.response.body.items.item);
-    })
-    .catch(e=>{
-      console.log(e.message);
-    })
+      .then(response => response.json())
+      .then(json=>{
+        setLocation(json.response.body.items.item);
+      })
+      .catch(e=>{
+        console.log(e.message);
+      })
     
   },[]);
 
