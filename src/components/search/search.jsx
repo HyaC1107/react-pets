@@ -29,7 +29,7 @@ function Search({onSearch,locations}) {
     }
     return (<div className="search">
         <div className="logo" onClick={refresh}>
-            <img src="img/logo.png" /><p>유기동물 조회</p>
+            <img src="../../public/img/logo.png" /><p>유기동물 조회</p>            
         </div>
         <form onSubmit={searchHandle} className="search-form">
             <div className="dateBox">

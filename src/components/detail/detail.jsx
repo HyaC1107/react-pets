@@ -4,7 +4,7 @@ function Detail({target}) {
 
 
     return (<div className="detail">
-        <img src={target.popfile} />
+        <img src={target.popfile2} />
         <h3>
             {target.careNm}<br /> 
             <small>{target.careAddr}</small>

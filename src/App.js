@@ -18,8 +18,8 @@ function App() {
   useEffect(()=>{
     setIsLoading(true);
     const key= process.env.REACT_APP_API_KEY;
-    const uri = `https://apis.data.go.kr/1543061/abandonmentPublicService_v2/abandonmentPublic_v2?serviceKey=${key}&type=json`;
-    console.log(key)
+    const uri = `https://apis.data.go.kr/1543061/abandonmentPublicService_v2/abandonmentPublic_v2?serviceKey=${key}&_type=json`;
+    // console.log(key)
     fetch(uri)
       .then(response => response.json())
       .then(json=>{
